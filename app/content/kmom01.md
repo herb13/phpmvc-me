@@ -25,7 +25,7 @@ Tycker det är smidigt och kraftfullt med Anax-MVC. Det är mer komplicerat än 
 
 För att få extra träning så valde jag att göra extrauppgifterna där jag lade in min kalender och tärningsspelet 100 under en egen meny (diverse). Fick uppdatera klasserna så att de använder namespace, vilket gick bra för både kalendern och tärningsspelet. Däremot fick jag problem med tärningsspelet eftersom det använde sig av session för att spara spelets poäng. Lösningen blev att jag bytte sessionshantering till att använda Anax-MVC:s session-klass och skickar in den som argument till tärningsspelet.
 
-Slutligen så lade jag upp me-sidan på GitHub. Jag jobbar i ett lokalt repository och pushar upp förändringar till mit repository på Github. Vill jobba på detta sätt eftersom det är bra träning både på GIT och hur man jobbar i industrin. Länk till repot finns i me-sidans footer.
+Slutligen så lade jag upp me-sidan på Github. Jag jobbar i ett lokalt repository och pushar upp förändringar till mit repository på Github. Vill jobba på detta sätt eftersom det är bra träning både på GIT och hur man jobbar i industrin. Länk till repot finns i me-sidans footer.
 
 Denna övning har gett en bra introduktion till Anax-MVC, jag har inte full koll på ramverket än och kommer att behöva läsa koden i ramverket fler gånger innan jag känner att jag har bra koll på det.   
 
