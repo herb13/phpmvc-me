@@ -26,7 +26,7 @@ The following external modules are included and subject to its own license.
 
 ### Anax-MVC (website built on top of this framework)
 * Website: https://github.com/mosbth/Anax-MVC
-* Version: v2.0.x
+* Version: v2.0.0
 * License: MIT License
 * Path: whole webb site structure included, i.e. /3pp /app /docs /src /test /theme /webroot
 
@@ -60,7 +60,7 @@ v1.0.0 (latest)
 * First version for exercise kmom01.
 * Updated /app/config/ with theme_me.php and navbar_me.php for own style
 * Updated /app/content/ with byline.md kmom01.md, kmom02.md, me.md, misc.md, report.md
-* Updated /app/src/ with /Calendar containing a class for a spmple calendar
+* Updated /app/src/ with /Calendar containing a class for a simple calendar
 * Updated /app/src/ with /Dicegame containing classes for a simple dice game
 * Updated /app/src/ with /Source containing classes for source code browsing
 * Added /view/me/ and template files for footer, header, page and source
