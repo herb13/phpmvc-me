@@ -1,0 +1,46 @@
+/* Styling for calendar */
+
+.calendartable {
+	margin-bottom:1.4em;width:80%;
+	text-align:center;
+	margin-left:auto;   /* Center table */ 
+    margin-right:auto;  /* Center table */
+}
+
+
+th {
+	font-weight:bold; 
+	color:white;
+	background: -moz-linear-gradient(center top , #45484d, #000000);     /* FF3.6+ */
+  	background: -webkit-linear-gradient(top, #45484d, #000000);          /* Chrome10+,Safari5.1+ */
+  	background: -ms-linear-gradient(top, #45484d, #000000);               /* IE10+ */
+}
+
+.weekend {
+	color:white;
+	background: grey;
+}
+
+/* Today is a "vardag" */
+
+.today {
+	color: #000;
+	border: 3px solid red;
+}
+
+/* Today is a "weekend" */
+
+.weekendtoday {
+	color: white;
+	border: 3px solid red;
+	background:grey;
+}
+
+/*th {border: 2px solid #333 ;padding:4px 10px 4px 5px; font-size: small; font-weight:bold;}*/
+
+td {border: 2px solid #333 ;padding:4px 10px 4px 5px; font-size: small; background:#FAFAD2;}
+
+/*tfoot {font-style:italic;}
+caption {text-align:left;background:#E0E8FA;}
+
+.orderby a {text-decoration: none; color:white;}*/

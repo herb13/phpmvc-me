@@ -1,0 +1,40 @@
+/**
+ * CSS sprite for a dice with six faces.
+ *
+ */
+ul.dice {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ 
+ul.dice li {
+  display: inline-block;
+  padding: 0;
+  margin: 0 4px 0 0;
+  width: 32px;
+  height: 32px;
+  background: url(../img/dice-faces.png) no-repeat;
+}
+ 
+ul.dice li.dice-1 { background-position: -160px 0px; }
+ul.dice li.dice-2 { background-position: -128px 0px; }
+ul.dice li.dice-3 { background-position:  -96px 0px; }
+ul.dice li.dice-4 { background-position:  -64px 0px; }
+ul.dice li.dice-5 { background-position:  -32px 0px; }
+ul.dice li.dice-6 { background-position:    0px 0px; }
+
+/**
+ * CSS for user feedback in the dice game.
+ *
+ */
+
+.alert,
+.notice,
+.success, 
+.info { padding: 0.8em; margin-bottom: 1em; border: 2px solid #ddd; }
+
+.alert   { background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4; }
+.notice  { background: #fff6bf; color: #514721; border-color: #ffd324; }
+.success { background: #e6efc2; color: #264409; border-color: #c6d880; }
+.info    { background: #d5edf8; color: #205791; border-color: #92cae4; }

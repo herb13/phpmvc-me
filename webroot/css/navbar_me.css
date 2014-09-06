@@ -1,0 +1,89 @@
+/**
+ * Based on http://dbwebb.se/coachen/en-navbar-med-drop-down-meny-i-ren-html-och-css
+ * Changed to only style li-items instead of a.
+ */
+.navbar {}
+ 
+.navbar ul {
+  list-style: none; 
+  margin: 0; 
+  padding: 0;
+  background: -moz-linear-gradient(center top , #000000, #45484d);     /* FF3.6+ */
+  background: -webkit-linear-gradient(top, #000000, #45484d);          /* Chrome10+,Safari5.1+ */
+  background: -ms-linear-gradient(top, #000  000,#45484d);             /* IE10+ */
+  /*margin-bottom: 5px;*/
+  /*border-top: 1px solid #000000;*/
+  text-align:center;
+}
+ 
+.navbar li {
+  display: inline-block;
+  position: relative;
+  margin-left:-5px;
+}
+ 
+.navbar a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+
+  color: #FAFAD2;
+  /*text-align: center;*/
+}
+
+.navbar li:hover {
+  color:#FAFAD2;
+  background: -moz-linear-gradient(center top , #45484d, #000000);     /* FF3.6+ */
+  background: -webkit-linear-gradient(top, #45484d, #000000);          /* Chrome10+,Safari5.1+ */
+  background: -ms-linear-gradient(top, #45484d, #000000);             /* IE10+ */
+} 
+ 
+.navbar li.selected-parent, 
+.navbar li.selected {
+  color: #FAFAD2;
+  background: -moz-linear-gradient(center top , #45484d, #000000);     /* FF3.6+ */
+  background: -webkit-linear-gradient(top, #45484d, #000000);          /* Chrome10+,Safari5.1+ */
+  background: -ms-linear-gradient(top, #45484d, #000000);             /* IE10+ */
+  /*color: #22f; 
+  border-color: #22f;*/
+}
+
+.navbar ul ul {
+  /*background-color: #fff; */
+  padding: 8px; 
+  position: absolute; 
+  left: -9999px; 
+  z-index: 2;
+}
+ 
+.navbar li li {
+  border-top: none;  
+  /*border-left: 4px solid transparent;  */
+}
+
+.navbar li:hover ul {
+  left: 0;
+  color:#FAFAD2;
+
+}
+ 
+.navbar li li:hover {
+  color:#FAFAD2;
+
+}
+
+.navbar li li.selected {
+  color:#FAFAD2;
+}
+
+.navbar ul li.selected a {
+
+  color:#FAFAD2; 
+}
+
+.navbar ul li a.hover {
+
+  color:#FAFAD2; 
+
+}
+

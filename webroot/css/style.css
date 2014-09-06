@@ -1,0 +1,123 @@
+/**
+ * General elements
+ */
+
+@import url(figure.css);
+
+body {
+  color: #333;
+  font-family: arial, sans-serif;
+  overflow-y: scroll;
+  background: url(../img/manhattan_north_croped_dark.jpg) fixed;
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+
+/**
+ * Layout of the main page elements 
+ */
+#wrapper {
+  margin: 0 auto;
+  width: 980px; 
+  /*padding: 10px;*/
+  background:#fff;
+ -moz-box-shadow: 0px 0px 15px #FAFAD2;
+  -webkit-box-shadow: 0px 0px 15px #FAFAD2;
+  box-shadow: 0px 0px 15px #FAFAD2;
+}
+
+
+/**
+ * Layout for header
+ */
+#header {
+  position: relative;
+  margin-bottom: -5px;
+}
+
+.sitetitle {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  font-size: 70px;
+  color: #eee;
+}
+
+.siteslogan {
+  position: absolute;
+  top: 115px;
+  left: 35px;
+  font-style: italic;
+  color: #eee;
+}
+
+
+/**
+ * Layout for main
+ */
+#main {
+  min-height: 20em;
+  margin-left:80px;
+  text-align: justify;
+}
+
+
+/**
+ * Layout for footer
+ */
+#footer {
+  margin-top: 40px;
+  padding-bottom: 22px;
+  /*border-top: 1px solid #ccc;*/
+  padding-top: 22px;
+  background: -moz-linear-gradient(center top , #45484d, #000000);     /* FF3.6+ */
+  background: -webkit-linear-gradient(top, #45484d, #000000);          /* Chrome10+,Safari5.1+ */
+  background: -ms-linear-gradient(top, #45484d, #000000);             /* IE10+ */
+  text-align: center;
+  font-family: arial, sans-serif;
+  font-size: small; 
+}
+
+.sitefooter {
+  color: #FAFAD2;
+}
+
+.sitefooter a {
+  color: #FAFAD2;
+}
+
+.sitecopyright {
+  color: #FAFAD2;
+}
+
+/**
+ * For articles
+ */
+.article1 {
+  width: 820px;
+  /*border-right: 1px solid #ccc;*/
+  padding-right: 1em;
+  font-family: time-new-roman; 
+}
+
+.article1 h1,
+.article1 h2 {
+  border-bottom: 1px solid #333;
+}
+
+.byline {
+  margin-top: 44px;
+  border-top: 1px dashed #333;
+  padding-top: 22px;
+  color: #666;
+  font-style: italic;
+}
+
+.byline p {
+  margin-top: 0;
+  font-family: time-new-roman;  
+}
+
