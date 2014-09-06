@@ -20,6 +20,6 @@ Loggade också in på student servern och körde samma kommando vilket gav versi
 <br/>    with Xdebug v2.2.5, Copyright (c) 2002-2014, by Derick Rethans
 </code>
 
-Följde sedan guiden för composer. Det fungerade utan problem på studentservern. Installerade det även på min egen miljö och lade det i /usr/bin/composer (döpte om composer.phar till composer för att det skall se likadant ut i både min egen miljö och på studentservern. det blir enklare så).
+Följde sedan guiden för composer. Det fungerade utan problem på studentservern. Installerade det även på min egen miljö och lade det i /usr/bin/composer (döpte om composer.phar till composer för att det skall se likadant ut i både min egen miljö och på studentservern. Det blir enklare så).
 
 Hade sedan en hel del problem när jag skulle peka om webläsaren till page-with-comments.php och felutskriften indikerade att det var problem att ladda klassen CommentController. Felsökte detta länge och gick igenom autoloader i /vendor och även min /app/autoloader.php, men kund inte hitta något fel. Det visade sig att filerna under /vendor/php/mvc/comment/ inte pushades upp till mitt phpmvc-me-repo Github (de undantogs i regeln vendor/.git i .gitignore). Så när jag klonade mitt repo till driftservern så fanns inte filerna med (därför hittades de inte av autoloadern). Jag gjorde då ett ett litet script som först klonar mitt eget repo ner till driftservern och sedan Mikaels repo för phpmv-comment. 
