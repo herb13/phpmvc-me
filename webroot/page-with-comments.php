@@ -6,7 +6,6 @@
 // Include the essential settings.
 require __DIR__.'/config.php'; 
 
-
 // Create services and inject into the app. 
 $di  = new \Anax\DI\CDIFactoryDefault();
 
