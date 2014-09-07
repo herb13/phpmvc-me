@@ -55,7 +55,7 @@ History
 
 ###History for phpmvc-me
 
-v1.0.0 (tagged with 1.0.0)
+v1.0.0 (tagged with v1.0.0)
 
 * First version for exercise kmom01.
 * Updated /app/config/ with theme_me.php and navbar_me.php for own style
