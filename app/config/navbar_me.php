@@ -20,7 +20,7 @@ return [
             'title' => 'Min me-sida'
         ],
  
-        // This is a menu item for all reports. Its a menu item with submenus.
+        // This is a menu item for all reports. It's a menu item with submenus.
         // One submenu for each kmom (excersise).
 
         'report'  => [
@@ -81,6 +81,15 @@ return [
             ],
         ],
 
+        // Menu item for this websites guest book. Here visitors can write
+        // ther own questions and comments.
+
+        'guestbook' => [
+            'text'  =>'Gästbok', 
+            'url'   =>'guestbook',  
+            'title' => 'Min gästbok'
+        ],
+
         // This is a menu item without any submenus. This one is for source code.
 
         'source' => [
@@ -88,6 +97,7 @@ return [
             'url'   =>'source',  
             'title' => 'Min källkod'
         ],
+
     ],
  
     // Callback tracing the current selected menu item base on scriptname
