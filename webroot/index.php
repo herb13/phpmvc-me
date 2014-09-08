@@ -182,18 +182,19 @@ $app->router->add('guestbook', function() use ($app) {
  
     $app->views->add('comment/index');
 
-    $app->dispatcher->forward([
-        'controller' => 'comment',
-        'action'     => 'view',
-    ]);
-
-    $app->views->add('comment/form', [
+     $app->views->add('comment/form', [
         'mail'      => null,
         'web'       => null,
         'name'      => null,
         'content'   => null,
         'output'    => null,
     ]);
+
+    $app->dispatcher->forward([
+        'controller' => 'comment',
+        'action'     => 'view',
+    ]);
+
 });
 
 // The route for source code. It's a page for source code browsing.
