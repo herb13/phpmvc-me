@@ -172,6 +172,36 @@ $app->router->add('dicegame', function() use ($app) {
   
 });
 
+// The route for guestbook. It's a page where users can write comments.
+// Set title and fetch the content. 
+
+// TODO: Move this to some better place?
+$di->set('CommentController', function() use ($di) {
+    $controller = new Phpmvc\Comment\CommentController();
+    $controller->setDI($di);
+    return $controller;
+});
+
+$app->router->add('guestbook', function() use ($app) {
+ 
+    //$app->theme->addStylesheet('css/source.css');
+    $app->theme->setTitle("Gästbok");
+ 
+    $app->views->add('comment/index');
+
+    $app->dispatcher->forward([
+        'controller' => 'comment',
+        'action'     => 'view',
+    ]);
+
+    $app->views->add('comment/form', [
+        'mail'      => null,
+        'web'       => null,
+        'name'      => null,
+        'content'   => null,
+        'output'    => null,
+    ]);
+});
 
 // The route for source code. It's a page for source code browsing.
 // Set title and fetch the content. The content is witten in 
