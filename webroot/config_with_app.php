@@ -8,5 +8,5 @@
 require __DIR__.'/config.php'; 
 
 // Create services and inject into the app. 
-$di  = new \Anax\DI\CDIFactoryDefault();
+$di  = new \Herb13\DI\CDIApplicationDefault();
 $app = new \Anax\Kernel\CAnax($di);
