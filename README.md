@@ -24,11 +24,11 @@ Use of external libraries
 
 The following external modules are included and subject to its own license.
 
-### Anax-MVC (website built on top of this framework)
+### Anax-MVC (Framework this website is built on)
 * Website: https://github.com/mosbth/Anax-MVC
 * Version: v2.0.0
 * License: MIT License
-* Path: whole webb site structure included, i.e. /3pp /app /docs /src /test /theme /webroot
+* Path: whole website structure included, i.e. /3pp /app /docs /src /test /theme /webroot
 
 
 
