@@ -175,13 +175,6 @@ $app->router->add('dicegame', function() use ($app) {
 // The route for guestbook. It's a page where users can write comments.
 // Set title and fetch the content. 
 
-/*// TODO: Move this to some better place
-$di->set('CommentController', function() use ($di) {
-    $controller = new Phpmvc\Comment\CommentController();
-    $controller->setDI($di);
-    return $controller;
-});*/
-
 $app->router->add('guestbook', function() use ($app) {
  
     //$app->theme->addStylesheet('css/source.css');
