@@ -1,4 +1,3 @@
-
 <figure class='right figcaption'>
 	<img src='img/me/logo.png' alt='Photo of me' height='70'>	
 </figure>

@@ -178,11 +178,12 @@ $app->router->add('dicegame', function() use ($app) {
 $app->router->add('guestbook', function() use ($app) {
  
     //$app->theme->addStylesheet('css/source.css');
+
     $app->theme->setTitle("Gästbok");
  
     $app->views->add('comment/index');
 
-     $app->views->add('comment/form', [
+    $app->views->add('comment/form', [
         'mail'      => null,
         'web'       => null,
         'name'      => null,
