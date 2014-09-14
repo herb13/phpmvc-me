@@ -1,5 +1,5 @@
-<h1>Page with comments</h1>
+<h1>Kommententera och diskutera innehållet</h1>
 
-<p>This is a sample page displaying how comments can interact with a page- or froncontroller.</p>
+<p>Här kan du lämna kommentarer och diskutera innehållet på denna webplats.</p>
 
 

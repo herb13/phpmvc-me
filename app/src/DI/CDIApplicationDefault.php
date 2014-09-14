@@ -12,7 +12,8 @@ namespace Herb13\DI;
  */
 
 use Anax\DI\CDIFactoryDefault;
-use Phpmvc\Comment\CommentController;
+//use Phpmvc\Comment\CommentController;
+use Herb13\Comment\MeCommentController;
 
 
 class CDIApplicationDefault extends CDIFactoryDefault
@@ -29,7 +30,7 @@ class CDIApplicationDefault extends CDIFactoryDefault
         // Configure controller for comments.
 
         $this->set('CommentController', function() {
-            $controller = new CommentController();
+            $controller = new MeCommentController();
             $controller->setDI($this);
             return $controller;
         });
