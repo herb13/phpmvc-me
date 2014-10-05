@@ -38,6 +38,13 @@ $app->router->add('me', function() use ($app) {
         'content' => $content,
         'byline' => $byline,
     ]);
+
+    // Controller for comments
+
+    $app->dispatcher->forward([
+        'controller' => 'me',
+        'action'     => 'view',
+    ]);
 });
  
 
@@ -181,18 +188,10 @@ $app->router->add('guestbook', function() use ($app) {
 
     $app->theme->setTitle("Gästbok");
  
-    $app->views->add('comment/index');
-
-    $app->views->add('comment/form', [
-        'mail'      => null,
-        'web'       => null,
-        'name'      => null,
-        'content'   => null,
-        'output'    => null,
-    ]);
+    // Controller for comments
 
     $app->dispatcher->forward([
-        'controller' => 'comment',
+        'controller' => 'guestbook',
         'action'     => 'view',
     ]);
 

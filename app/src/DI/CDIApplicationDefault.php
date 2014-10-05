@@ -12,7 +12,6 @@ namespace Herb13\DI;
  */
 
 use Anax\DI\CDIFactoryDefault;
-//use Phpmvc\Comment\CommentController;
 use Herb13\Comment\MeCommentController;
 
 
@@ -27,13 +26,24 @@ class CDIApplicationDefault extends CDIFactoryDefault
     {
         parent::__construct();
 
-        // Configure controller for comments.
+        // Configure controller for comments, first one is added to the guestbook.
 
-        $this->set('CommentController', function() {
+        $this->set('GuestbookController', function() {
             $controller = new MeCommentController();
             $controller->setDI($this);
+            $controller->setPage('guestbook'); // page where comments should be added
             return $controller;
         });
+
+        // Configure controller for comments, this one is added to the me page
+
+        $this->set('MeController', function() {
+            $controller = new MeCommentController();
+            $controller->setDI($this);
+            $controller->setPage('me'); // page where comments should be added
+            return $controller;
+        });
+
 
         // Add any extra controller cofigurations here ...
     }

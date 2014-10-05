@@ -74,7 +74,7 @@ return [
         'title_append' => ' | Powered by Anax',
 
         // Stylesheets
-        'stylesheets' => ['css/style.css', 'css/navbar_me.css', 'css/figure.css', 'css/calendar.css','css/dice.css'],
+        'stylesheets' => ['css/style.css', 'css/navbar_me.css', 'css/figure.css', 'css/calendar.css','css/dice.css','css/comments.css'],
         // Stylesheets
 
         // Inline style
