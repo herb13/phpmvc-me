@@ -53,6 +53,11 @@ class MeCommentsInSession extends CommentsInSession
         $this->session->set($this->createIndexName($key), []);
     }
 
+    /**
+     * Create session index based on the $key 
+     *
+     * @return void
+     */
     private function createIndexName($key) {
 
         return 'comments_' . $key;
