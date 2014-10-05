@@ -1,7 +1,7 @@
 
 .comment-form {
 	width: 800px;
-	font-size: 0.8em;
+	/*font-size: 0.8em;*/
 }
 
 .comment {
@@ -10,11 +10,38 @@
 	margin:4px;
 	padding-left: 8px;
 	padding-right: 8px;
-	/*background: grey;*/
+	background: #f0f0f0;
+}
+
+.content {
+	font-size:15px;
+}
+
+.timestamp {
+	/*color: grey;*/
+}
+
+.contributor {
+	/*color: grey;*/
+	/*font-style: italic;*/
+}
+
+.contactinfo {
+	font-size:15px;
+	color: grey;
+	border-top: 1px solid grey;
+}
+
+.edit {
+	
+}
+
+.delete {
+	
 }
 
 textarea {
   /*font-size: 1.2em;*/
-  width: 700px;
+  width: 780px;
   min-height: 50px;
 }

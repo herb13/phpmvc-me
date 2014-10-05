@@ -85,12 +85,11 @@ class MeCommentController extends CommentController
         }
 
         // Save all data from the user into a comment array
-
         $comment = [
             'content'   => $this->request->getPost('content'),
-            'name'      => $this->request->getPost('name'),
-            'web'       => $this->request->getPost('web'),
-            'mail'      => $this->request->getPost('mail'),
+            'name'      => !empty($this->request->getPost('name')) ? $this->request->getPost('name') : "Inlagt av anonym",
+            'web'       => !empty($this->request->getPost('web')) ? $this->request->getPost('web') : "Ingen webbadress",
+            'mail'      => !empty($this->request->getPost('mail')) ? $this->request->getPost('mail') : "Ingen mailadress",
             'timestamp' => time(),
             'ip'        => $this->request->getServer('REMOTE_ADDR'),
         ];
@@ -201,9 +200,9 @@ class MeCommentController extends CommentController
         // Update it with data from the rquest (post)
 
         $commentToUpdate['content'] = $this->request->getPost('content');
-        $commentToUpdate['name'] = $this->request->getPost('name');
-        $commentToUpdate['web'] = $this->request->getPost('web');
-        $commentToUpdate['mail'] = $this->request->getPost('mail');
+        $commentToUpdate['name'] = !empty($commentToUpdate['name']) ? $this->request->getPost('name') : "Inlagt av anonym";
+        $commentToUpdate['web'] = !empty($commentToUpdate['web']) ? $this->request->getPost('web') : "Ingen webbadress";
+        $commentToUpdate['mail'] = !empty($commentToUpdate['mail']) ? $this->request->getPost('mail') : "Ingen mailadress";
         
         // Write back the updated comment to the array with all
         // comments
