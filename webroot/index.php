@@ -184,9 +184,14 @@ $app->router->add('dicegame', function() use ($app) {
 
 $app->router->add('guestbook', function() use ($app) {
  
-    //$app->theme->addStylesheet('css/source.css');
-
     $app->theme->setTitle("Gästbok");
+
+    $content = $app->fileContent->get('guestbook.md');
+    $content = $app->textFilter->doFilter($content, 'shortcode, markdown');
+    
+    $app->views->add('me/page', [
+        'content' => $content,
+    ]);
  
     // Controller for comments
 
