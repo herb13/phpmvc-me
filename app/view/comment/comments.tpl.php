@@ -1,8 +1,8 @@
-<h2>Kommentarer</h2>
 <?php if (is_array($comments)) : ?>
 <div class='comments'>
 <?php foreach ($comments as $id => $comment) : ?>
 	<div class='comment'>
+	<?=$comment['avatar']?>	
 	<h4 class='comment-heading'>Kommentar #<?=$id?><span class='timestamp'> | Skapad: <?=date("Y-m-d H:i:s",$comment['timestamp'])?></span><span class='contributor'> | Av: <?=$comment['name']?></span></h4>
 	<form method=post>	
 		<span class='content'><p><?=$comment['content']?></p></span>

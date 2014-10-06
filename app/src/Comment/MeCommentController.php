@@ -11,9 +11,17 @@ namespace Herb13\Comment;
 
 use Phpmvc\Comment\CommentController;
 use Herb13\Comment\MeCommentsInSession;
+use Herb13\Gravatar\CGravatar;
+
 
 class MeCommentController extends CommentController
 {
+
+    const DEFAULT_NAME = "Inlagt av anonym";
+    const DEFAULT_WEB  = "Ingen webbadress";
+    const DEFAULT_MAIL = "Ingen mailadress";
+
+    const AVATAR_SIZE = 40;
 
     private $pageUrl = null;
 
@@ -84,14 +92,21 @@ class MeCommentController extends CommentController
             $this->response->redirect($this->request->getPost('redirect'));
         }
 
+        // Filter the input
+
+        $name = !empty($this->request->getPost('name')) ? $this->request->getPost('name') : self::DEFAULT_NAME;
+        $web  = !empty($this->request->getPost('web')) ? $this->request->getPost('web') : self::DEFAULT_WEB;
+        $mail = !empty($this->request->getPost('mail')) ? $this->request->getPost('mail') : self::DEFAULT_MAIL;
+
         // Save all data from the user into a comment array
         $comment = [
             'content'   => $this->request->getPost('content'),
-            'name'      => !empty($this->request->getPost('name')) ? $this->request->getPost('name') : "Inlagt av anonym",
-            'web'       => !empty($this->request->getPost('web')) ? $this->request->getPost('web') : "Ingen webbadress",
-            'mail'      => !empty($this->request->getPost('mail')) ? $this->request->getPost('mail') : "Ingen mailadress",
+            'name'      => $name,
+            'web'       => $web,
+            'mail'      => $mail,
             'timestamp' => time(),
             'ip'        => $this->request->getServer('REMOTE_ADDR'),
+            'avatar'    => $this->generateAvatar($mail),
         ];
 
         // Create the session to get access to the comments
@@ -197,12 +212,19 @@ class MeCommentController extends CommentController
 
         $commentToUpdate = $allComments[$id];
 
+        // Filter the user input
+
+        $name = !empty($commentToUpdate['name']) ? $this->request->getPost('name') : self::DEFAULT_NAME;
+        $web  = !empty($commentToUpdate['web']) ? $this->request->getPost('web') : self::DEFAULT_WEB;
+        $mail = !empty($commentToUpdate['mail']) ? $this->request->getPost('mail') : self::DEFAULT_MAIL;
+
         // Update it with data from the rquest (post)
 
         $commentToUpdate['content'] = $this->request->getPost('content');
-        $commentToUpdate['name'] = !empty($commentToUpdate['name']) ? $this->request->getPost('name') : "Inlagt av anonym";
-        $commentToUpdate['web'] = !empty($commentToUpdate['web']) ? $this->request->getPost('web') : "Ingen webbadress";
-        $commentToUpdate['mail'] = !empty($commentToUpdate['mail']) ? $this->request->getPost('mail') : "Ingen mailadress";
+        $commentToUpdate['name']    = $name;
+        $commentToUpdate['web']     = $web;
+        $commentToUpdate['mail']    = $mail; 
+        $commentToUpdate['avatar']  = $this->generateAvatar($mail);
         
         // Write back the updated comment to the array with all
         // comments
@@ -292,5 +314,22 @@ class MeCommentController extends CommentController
         // Redirect to the page saved in post by the form
 
         $this->response->redirect($this->request->getPost('redirect'));
+    }
+
+    /*****************************************************************************
+     * This method generates an avatar for a comment based on the email address.
+     * @param -
+     *
+     */
+
+    private function generateAvatar($mail) {
+
+        $gravatar = new CGravatar();
+        
+        $gravatar->setEmail($mail)
+                 ->setSize(self::AVATAR_SIZE)
+                 ->setStyleAttributes(array('class' => 'avatar', 'alt' => 'avatar'));
+
+        return $gravatar->getGravatarAsImg();       
     }
 }

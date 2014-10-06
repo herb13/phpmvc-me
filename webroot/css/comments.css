@@ -1,7 +1,10 @@
+/* Styling for the comments module */
 
 .comment-form {
-	width: 800px;
-	/*font-size: 0.8em;*/
+	width: 796px;
+	margin:4px;
+	margin-bottom:8px;
+	border: 1px solid #333;
 }
 
 .comment {
@@ -14,16 +17,9 @@
 }
 
 .content {
+	width: 800px;
 	font-size:15px;
-}
-
-.timestamp {
-	/*color: grey;*/
-}
-
-.contributor {
-	/*color: grey;*/
-	/*font-style: italic;*/
+	word-break: keep-all;
 }
 
 .contactinfo {
@@ -32,16 +28,15 @@
 	border-top: 1px solid grey;
 }
 
-.edit {
-	
-}
-
-.delete {
-	
+.avatar {
+	float: left;
+	margin-top:8px;
+	margin-right:8px;
 }
 
 textarea {
   /*font-size: 1.2em;*/
+  font-size: 14px;
   width: 780px;
   min-height: 50px;
 }
