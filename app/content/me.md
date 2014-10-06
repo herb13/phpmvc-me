@@ -1,5 +1,5 @@
 Om mig själv
-====================================
+------------
 <figure class='right border center'>
 	<img src='img/me/photo_of_me.gif' alt='Photo of me' height='250'>
 	<figcaption>

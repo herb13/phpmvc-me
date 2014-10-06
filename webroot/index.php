@@ -188,7 +188,7 @@ $app->router->add('guestbook', function() use ($app) {
 
     $content = $app->fileContent->get('guestbook.md');
     $content = $app->textFilter->doFilter($content, 'shortcode, markdown');
-    
+
     $app->views->add('me/page', [
         'content' => $content,
     ]);
