@@ -16,11 +16,14 @@ namespace Herb13\Gravatar;
 class CGravatar
 {
 
+
 	// The URL API towards gravatar
 
 	const GRAVATAR_API = "http://www.gravatar.com/avatar.php/";
 
+
 	// The configuration for avatar generation
+	// initialised to its default values
 
 	private $configuration = array(
 
@@ -31,9 +34,10 @@ class CGravatar
 
 
 	/************************************************************************** 
-	 * 
-	 * @param 
-	 * @return -
+	 * Method for returning the URL to a generated gravatar. The generation is
+	 * done based on the e-mail address set in setEmail() method
+	 * @param -
+	 * @return a string with the URL to the gravatar
 	 */
 
 	public function getGravatarAsUrl() {
@@ -44,9 +48,12 @@ class CGravatar
 
 
 	/************************************************************************** 
-	 * 
-	 * @param 
-	 * @return -
+	 * Method for returning an <img xxx> tag with generated gravatar. The 
+	 * generation is done based on the email address set in setEmail() method.
+	 * Further, any style attributes can also be set in setStyleAttributes().
+	 * @param  -
+	 * @return a string with the <img xx> tag to the gravatar and any style
+	 *         attributes set in setStyleAttributes()
 	 */
 
 	public function getGravatarAsImg() {
@@ -63,9 +70,10 @@ class CGravatar
 		return $html;
 	}
 
+
 	/************************************************************************** 
-	 * 
-	 * @param 
+	 * Method for setting an email to be used as hash for fetching the gravatar
+	 * @param string, email address
 	 * @return -
 	 */
 
@@ -75,9 +83,10 @@ class CGravatar
 		return $this;
 	}
 
+
 	/************************************************************************** 
-	 * 
-	 * @param 
+	 * Method for setting the size of the gravatar, default size is 80 pixels.
+	 * @param $size, a number, unit pixels
 	 * @return -
 	 */
 
@@ -87,9 +96,13 @@ class CGravatar
 		return $this;
 	}
 
+
 	/************************************************************************** 
-	 * 
-	 * @param 
+	 * Method for setting style attributes to be inserted in the <img> tag. 
+	 * Tthe style attributes are used when generating a gravatar with the
+	 * getGracatarAsImg() method.
+	 * @param $attributes, array('a1' => 'v1', 'a2' => 'v2')
+	 *        This will produce <img src='<gravatarUrl>' a1='v1' a2='v2'>   
 	 * @return -
 	 */
 

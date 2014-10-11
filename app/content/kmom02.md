@@ -22,6 +22,17 @@ Loggade också in på student servern och körde samma kommando vilket gav versi
 
 Följde sedan guiden för composer. Det fungerade utan problem på studentservern. Installerade det även på min egen miljö och lade det i /usr/bin/composer (döpte om composer.phar till composer för att det skall se likadant ut i både min egen miljö och på studentservern. Det blir enklare så).
 
-Hade sedan en hel del problem när jag skulle peka om webläsaren till page-with-comments.php och felutskriften indikerade att det var problem att ladda klassen CommentController. Felsökte detta länge och gick igenom autoloader i /vendor och även min /app/autoloader.php, men kund inte hitta något fel. Det visade sig att filerna under /vendor/php/mvc/comment/ inte pushades upp till mitt phpmvc-me-repo Github (de undantogs i regeln vendor/.git i .gitignore). Så när jag klonade mitt repo till driftservern så fanns inte filerna med (därför hittades de inte av autoloadern). Jag gjorde då ett ett litet script som först klonar mitt eget repo ner till driftservern och sedan Mikaels repo för phpmv-comment. 
+Browsade runt i koden för "comment controller" komponenten. Insåg ganska snabbt att det skulle behövas en hel del förändringar i komponenten för att få till editering och borttagning av inlägg/kommenterar samt att få det att fungera på valfri sida. Jag ville inte koda om själva komponenten eftersom man då får problem om man tar ner en uppdaterad variant av den senare. Istället valde jag att göra utökningar (subklasser) av CommentController och CommentsInSession som jag lade under /app/Comment/. Det resulterade i följande:
 
-För att få in CommentController så gjorde jag en egen klass för "dependency injection", /app/src/CDIApplicationDefault.php som är en subklass till CDIFactoryDefault.php. I denna klassen definierar man egna controllers för applikationen. Det ger ett smidigt sätt att bygga vidare på CDIFactoryDefault.php istället för att uppdatera den. 
+* MeCommentController, ärver från CommentController och har utökat stöd för editering och radering av specifika inlägg. Har också stöd för koppla inlägg till en specifik sida
+* MeCommentsInSession, ärver från CommentsInSession och har adderat stöd för att spara kommentar i valbar sessions-variabel. På så sätt kan olika sidor ha sina egna kommentarer
+
+Det visade sig till slut att det stöd som fanns i komponeten, "comment controller", inte gick att återvända så mycket av. Det blev antingen nya metoder i mina subklasser eller överridna (override). Hade varit bra om det hade funnits lite bättre stöd i ursprungskomponenten så att man inte behövde göra om det mesta. Då faller lite idén med att använda externa komponenter. 
+För att konfigurera CommentController så gjorde jag en egen klass för "dependency injection", CDIApplicationDefault under /app/src/, som är en subklass till CDIFactoryDefault.php. I denna klassen definierar man egna controllers för applikationen. Det ger ett smidigt sätt att bygga vidare på CDIFactoryDefault.php istället för att uppdatera den. Här skapas 2 stycken instanser av "MeCommentController", en för varje sida där man vill ha kommentarer, med namnen:
+
+* GuestBookController, hanterar kommentarar för gästbok sidan
+* MeController, hanterar kommentarer för me-sidan
+
+Gjorde också egna vyer i /app/view/comment/ som renderar HTML för alla delar i kommentatorsystemet.
+
+Slutligen gjorde jag en klass CGravatar, under /app/src/Gravatar/, som hämtar en gravatar från http://wwww.gravatar.com baserat på en anvädares mailadress. Jag valde att lägga detta i en egen klass för att kunna återanvända den i framtiden. MeCommentController använder CGravatar för att hämta avatar från gravatar.
