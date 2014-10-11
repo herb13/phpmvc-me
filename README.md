@@ -32,6 +32,14 @@ The following external modules are included and subject to its own license.
 
 
 
+### PHPMVC-Comment 
+* Website: https://github.com/mosbth/phpmvc-comment
+* Version: Latest
+* License: -
+* Path: `vendor/phpmvc/comment`
+
+
+
 ### Modernizr
 * Website: http://modernizr.com/
 * Version: 2.6.2
@@ -69,3 +77,9 @@ v1.0.0 (tagged with v1.0.0)
 * Added /webroot/index.php main page controller and url dispacher 
 
 
+v2.0.0 (tagged with v2.0.0)
+
+* Version containing kmom02
+* Added support for comment system
+* Comment system introduced on two pages, me and guestbook
+* Gravatar support added for comments
