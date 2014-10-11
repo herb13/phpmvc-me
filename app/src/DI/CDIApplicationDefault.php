@@ -12,7 +12,7 @@ namespace Herb13\DI;
  */
 
 use Anax\DI\CDIFactoryDefault;
-use Herb13\Comment\MeCommentController;
+use Herb13\Comment\CPageCommentController;
 
 
 class CDIApplicationDefault extends CDIFactoryDefault
@@ -29,7 +29,7 @@ class CDIApplicationDefault extends CDIFactoryDefault
         // Configure controller for comments, first one is added to the guestbook.
 
         $this->set('GuestbookController', function() {
-            $controller = new MeCommentController();
+            $controller = new CPageCommentController();
             $controller->setDI($this);
             $controller->setPage('guestbook'); // page where comments should be added
             return $controller;
@@ -38,7 +38,7 @@ class CDIApplicationDefault extends CDIFactoryDefault
         // Configure controller for comments, this one is added to the me page
 
         $this->set('MeController', function() {
-            $controller = new MeCommentController();
+            $controller = new CPageCommentController();
             $controller->setDI($this);
             $controller->setPage('me'); // page where comments should be added
             return $controller;

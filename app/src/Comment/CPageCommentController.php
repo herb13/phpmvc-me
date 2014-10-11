@@ -10,11 +10,11 @@
 namespace Herb13\Comment;
 
 use Phpmvc\Comment\CommentController;
-use Herb13\Comment\MeCommentsInSession;
+use Herb13\Comment\CPageCommentsInSession;
 use Herb13\Gravatar\CGravatar;
 
 
-class MeCommentController extends CommentController
+class CPageCommentController extends CommentController
 {
 
     const DEFAULT_NAME = "Inlagt av anonym";
@@ -49,7 +49,7 @@ class MeCommentController extends CommentController
         // Create the session to get access to the comments
         // Inject the dependencies (di)
 
-        $comments = new MeCommentsInSession();
+        $comments = new CPageCommentsInSession();
         $comments->setDI($this->di);
 
         // Set views for text and also display a form for
@@ -112,7 +112,7 @@ class MeCommentController extends CommentController
         // Create the session to get access to the comments
         // Inject the dependencies (di)
 
-        $comments = new MeCommentsInSession();
+        $comments = new CPageCommentsInSession();
         $comments->setDI($this->di);
 
         // Add the comment to the particular page
@@ -143,7 +143,7 @@ class MeCommentController extends CommentController
         // Create the session to get access to the comments
         // Inject the dependencies (di)
 
-        $comments = new MeCommentsInSession();
+        $comments = new CPageCommentsInSession();
         $comments->setDI($this->di);
 
         // Fetch all comments for the particular page
@@ -203,7 +203,7 @@ class MeCommentController extends CommentController
         // Object for comments in session, so that we can access 
         // all available comments. Fetch all comments.
 
-        $comments = new MeCommentsInSession();
+        $comments = new CPageCommentsInSession();
         $comments->setDI($this->di);
         $allComments = $comments->findAllWithKey($this->pageUrl);
 
@@ -266,7 +266,7 @@ class MeCommentController extends CommentController
         // Initiate the session. It's here we save all data and read out all
         // comments so far. Then delete the one with $id and write them back
 
-        $comments = new MeCommentsInSession();
+        $comments = new CPageCommentsInSession();
         $comments->setDI($this->di);
         $allComments = $comments->findAllWithKey($this->pageUrl);
 
@@ -304,7 +304,7 @@ class MeCommentController extends CommentController
         // Create the session to get access to the comments
         // Inject the dependencies (di)
 
-        $comments = new MeCommentsInSession();
+        $comments = new CPageCommentsInSession();
         $comments->setDI($this->di);
 
         // Delete all comments for the particular page

@@ -12,7 +12,7 @@ namespace Herb13\Comment;
 
 use Phpmvc\Comment\CommentsInSession;
 
-class MeCommentsInSession extends CommentsInSession
+class CPageCommentsInSession extends CommentsInSession
 {
     
     /**
