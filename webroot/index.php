@@ -114,6 +114,28 @@ $app->router->add('kmom02', function() use ($app) {
 });
 
 
+// The route for kmom03.
+// Set title and fetch the content. The content is witten in 
+// markdown and stored in a separate file at the moment
+
+$app->router->add('kmom03', function() use ($app) {
+ 
+    $app->theme->setTitle("Kmom03");
+
+    $content = $app->fileContent->get('kmom03.md');
+    $content = $app->textFilter->doFilter($content, 'shortcode, markdown');
+    
+    $byline  = $app->fileContent->get('byline.md');
+    $byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
+    
+    $app->views->add('me/page', [
+        'content' => $content,
+        'byline' => $byline,
+    ]);
+  
+});
+
+
 // The route for misc. It's a page with submenus.
 // Set title and fetch the content. The content is witten in 
 // markdown and stored in a separate file at the moment
@@ -179,6 +201,7 @@ $app->router->add('dicegame', function() use ($app) {
   
 });
 
+
 // The route for guestbook. It's a page where users can write comments.
 // Set title and fetch the content. 
 
@@ -201,6 +224,7 @@ $app->router->add('guestbook', function() use ($app) {
     ]);
 
 });
+
 
 // The route for source code. It's a page for source code browsing.
 // Set title and fetch the content. The content is witten in 

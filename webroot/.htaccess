@@ -6,8 +6,11 @@ ErrorDocument 404 "This is a Anax 404. Document is not here."
   RewriteEngine on
  
   # Must use RewriteBase on www.student.bth.se, Rewritebase for url /~mos/test is /~mos/test/
+  # On local host simply comment out the lines below.
+  # Note thate there are different rewrites for each kmom!
+
   #RewriteBase /~herb13/phpmvc/kmom01/webroot/
-  RewriteBase /~herb13/phpmvc/kmom02/phpmvc-me/webroot/
+  #RewriteBase /~herb13/phpmvc/kmom02/phpmvc-me/webroot/
  
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

@@ -46,6 +46,13 @@ return [
                         'url'   => 'kmom02',  
                         'title' => 'Redovisning Kmom02'
                     ],
+
+                     // This is a menu item of the submenu
+                    'kmom03'  => [
+                        'text'  => 'Kmom03',   
+                        'url'   => 'kmom03',  
+                        'title' => 'Redovisning Kmom03'
+                    ],
                 ],
             ],
         ],
@@ -88,6 +95,43 @@ return [
             'text'  =>'Gästbok', 
             'url'   =>'guestbook',  
             'title' => 'Min gästbok'
+        ],
+
+        // Menu item for a another theme. This shows grid layout and usage 
+        // of LESS as well as font awesome
+
+        'theme'  => [
+            'text'  => 'Tema',   
+            'url'   => 'theme_grid.php/theme',   
+            'title' => 'Ett annat tema',
+
+            // Here we add the submenu, with some menu items, as part of a existing menu item
+            'submenu' => [
+
+                'items' => [
+
+                    // This is a menu item of the submenu
+                    'regions'  => [
+                        'text'  => 'Regioner',   
+                        'url'   => 'theme_grid.php/regions',  
+                        'title' => 'Regioner'
+                    ],
+
+                    // This is a menu item of the submenu
+                    'typography'  => [
+                        'text'  => 'Typografi',   
+                        'url'   => 'theme_grid.php/typography',  
+                        'title' => 'Typografi'
+                    ],
+
+                    // This is a menu item of the submenu
+                    'awesome'  => [
+                        'text'  => 'Awesome',   
+                        'url'   => 'theme_grid.php/awesome',  
+                        'title' => 'Font awesome'
+                    ],
+                ],
+            ],
         ],
 
         // This is a menu item without any submenus. This one is for source code.
