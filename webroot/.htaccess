@@ -11,6 +11,7 @@ ErrorDocument 404 "This is a Anax 404. Document is not here."
 
   #RewriteBase /~herb13/phpmvc/kmom01/webroot/
   #RewriteBase /~herb13/phpmvc/kmom02/phpmvc-me/webroot/
+  RewriteBase /~herb13/phpmvc/kmom03/phpmvc-me/webroot/
  
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
