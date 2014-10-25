@@ -1,0 +1,131 @@
+
+@import "grid_semantic.less"
+
+
+/**
+ * Layout of the main page elements 
+ */
+
+#wrapper {
+  width: @total-width;
+  margin: 0 auto;
+  background: #FFFFFF;
+  -moz-box-shadow: 0px 0px 15px #FAFAD2;
+  -webkit-box-shadow: 0px 0px 15px #FAFAD2;
+  box-shadow: 0px 0px 15px #FAFAD2;
+}
+
+
+/**
+ * Layout for header
+ */
+
+#header {
+  //.column(@columns);
+  width: @total-width;
+  position: relative;
+  margin-bottom: -5px;
+}
+
+.sitetitle {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  font-size: 70px;
+  color: #eee;
+}
+
+.siteslogan {
+  position: absolute;
+  top: 115px;
+  left: 25px;
+  font-style: italic;
+  color: #eee;
+}
+
+.sitelogo {
+    width: 960px;
+}
+
+/**
+ * Layout for footer
+ */
+
+#footer {
+  width: @total-width;
+  padding-bottom: 22px;
+  padding-top: 22px;
+  background: -moz-linear-gradient(center top , #45484d, #000000);     /* FF3.6+ */
+  background: -webkit-linear-gradient(top, #45484d, #000000);          /* Chrome10+,Safari5.1+ */
+  background: -ms-linear-gradient(top, #45484d, #000000);             /* IE10+ */
+  text-align: center;
+  font-family: arial, sans-serif;
+  font-size: small; 
+}
+
+/**
+ *
+ */
+
+@boxheight: 50px;
+@margin: 22px;
+@width: 980px;
+
+#wrap-featured,
+#wrap-main,
+#wrap-triptych,
+#wrap-footer-col {
+    .clearfix();
+}
+
+
+#navbar {
+    width: @total-width;
+    //.column(@columns);
+    margin-bottom: @margin;
+}
+
+
+#flash {
+    .column(@columns);
+    background: grey;
+    margin-bottom: @margin;
+    min-height: @boxheight;
+}
+
+#main {
+    .column(@columns / 3 * 2);
+    background: grey;
+    margin-bottom: @margin;
+    min-height: @boxheight;
+}
+ 
+#sidebar {
+    .column(@columns / 3);
+    background: grey;
+    margin-bottom: @margin;
+    min-height: @boxheight;
+}
+ 
+#featured-1,
+#featured-2,
+#featured-3,
+#triptych-1,
+#triptych-2,
+#triptych-3 {
+    .column(@columns / 3);
+    background: grey;
+    margin-bottom: @margin;
+    min-height: @boxheight;
+}
+ 
+#footer-col-1,
+#footer-col-2,
+#footer-col-3, 
+#footer-col-4 {
+    .column(@columns / 4);
+    background: grey;
+    margin-bottom: @margin;
+    min-height: @boxheight;
+}
+
