@@ -3,6 +3,24 @@
  */
 
 
+/** ------------------------------------------------------------------ 
+ * Grid
+ */
+@column-width: 30;
+@gutter-width: 10;
+@columns: 24;
+
+// Utility variable — you should never need to modify this
+@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+
+// Set @total-width to 100% for a fluid layout
+@total-width: @gridsystem-width;
+
+@columnWidth: @column-width;
+@gutterWidth: @gutter-width;
+
+
+
 /** --------------------------------------------------------------
  * Typography.
  *
@@ -32,7 +50,7 @@
  * Default font-families
  */
 @fontFamilyHeadings:  @fontFamilyTimes;
-@fontFamilyBody:      @fontFamilyHelveticaNeue;
+@fontFamilyBody:      @fontFamilyTimes;
 @fontFamilyCode:      @fontFamilyMonospace;
 @fontFamilySiteTitle: @fontFamilyTimes;
 
@@ -128,13 +146,9 @@
 
 @colorSearchUrl:  #009933;
 
-/** --------------------------------------------------------------
- * Specifi colors for me-website
- */
 
-@lightYellow: 	#FAFAD2;
 
 /** --------------------------------------------------------------
  * Standard colors
  */
-@grey: #ccc; 
+@grey: #ccc;
