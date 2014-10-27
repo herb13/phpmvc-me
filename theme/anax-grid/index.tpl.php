@@ -51,6 +51,7 @@
 <div id='sidebar'><?php $this->views->render('sidebar')?></div>
 <?php endif; ?>
 
+<div id='wrap-main'></div>
 
 <?php if ($this->views->hasContent('triptych-1', 'triptych-2', 'triptych-3')) : ?>
 <div id='wrap-triptych'>

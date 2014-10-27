@@ -52,8 +52,6 @@ $app->router->add('theme', function() use ($app) {
                ->addString($content, 'main')
                ->addString('sidebar', 'sidebar');*/
   
-
-  $app->theme->setTitle("Regioner");
   //$app->theme->addStyleSheet('css/anax-grid/grid_background.less');
 
   $content = "Detta är ett nytt tema som visar regioner";
@@ -112,6 +110,31 @@ $app->router->add('regions', function() use ($app) {
                ->addString('footer-col-3', 'footer-col-3')
                ->addString('footer-col-4', 'footer-col-4');
 
+  //  $app->views->add('me/page', [
+  //      'content' => $content,
+  //  ]);
+
+});
+
+
+$app->router->add('typography', function() use ($app) {
+ 
+  $app->theme->setTitle("Typografi");
+  //$app->theme->addStyleSheet('css/anax-grid/grid_background.less');
+
+  $content = $content = $app->fileContent->get('typography.html');
+
+    //$content = $app->fileContent->get('theme.md');
+    //$content = $app->textFilter->doFilter($content, 'shortcode, markdown');
+    
+    //$byline  = $app->fileContent->get('byline.md');
+    //$byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
+    
+
+  $app->views->addString($content, 'main')
+             ->addString($content, 'sidebar');
+              
+               
   //  $app->views->add('me/page', [
   //      'content' => $content,
   //  ]);
