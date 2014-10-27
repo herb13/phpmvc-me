@@ -5,7 +5,10 @@
 
 #wrapper {
   background: #FFFFFF;
-  width: @total-width;
+  //width: @total-width;
+  
+  max-width: 960px;
+
   margin: 0 auto;
   -moz-box-shadow: 0px 0px 15px #FAFAD2;
   -webkit-box-shadow: 0px 0px 15px #FAFAD2;
@@ -26,18 +29,20 @@
 
 .sitetitle {
   position: absolute;
-  top: 40px;
-  left: 20px;
+  top: 0px;
+  left: 10px;
 }
 
 .siteslogan {
   position: absolute;
-  top: 115px;
-  left: 25px;
+  top: 75px;
+  left: 15px;
+  
 }
 
 .sitelogo {
-    width: 960px;
+    //width: 960px;
+    width: @total-width;
 }
 
 /**
@@ -63,7 +68,7 @@
 
 @boxheight: 50px;
 @margin: 22px;
-@width: 980px;
+
 
 #wrap-featured,
 #wrap-main,

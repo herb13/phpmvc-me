@@ -28,8 +28,8 @@ return [
             'region' => 'header', 
             'template' => 'me/header', 
             'data' => [
-                'siteTitle' => "Min me-sida",
-                'siteTagline' => "Powered by Anax MVC i kursen PHPMVC",
+                'siteTitle' => "Tema-sida",
+                'siteTagline' => "Powered by LESS",
             ], 
             'sort' => -1
         ],
