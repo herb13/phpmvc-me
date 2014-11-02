@@ -81,59 +81,55 @@ $app->router->add('theme', function() use ($app) {
   // Configure the views
     
   $app->views->addString($flash, 'flash')
-               ->addString($featured1, 'featured-1')
-               ->addString($featured2, 'featured-2')
-               ->addString($featured3, 'featured-3')
-               ->addString($main, 'main')
-               ->addString($sidebar, 'sidebar')
-               ->addString($tripTych11, 'triptych-1')
-               ->addString($tripTych12, 'triptych-2')
-               ->addString($tripTych13, 'triptych-3')
-               ->addString($footerCol1, 'footer-col-1')
-               ->addString($footerCol2, 'footer-col-2')
-               ->addString($footerCol3, 'footer-col-3')
-               ->addString($footerCol4, 'footer-col-4');
-
-    /* $app->views->add('me/page', [
-        'content' => $content,
-    ], 'main');*/
+             ->addString($featured1, 'featured-1')
+             ->addString($featured2, 'featured-2')
+             ->addString($featured3, 'featured-3')
+             ->addString($main, 'main')
+             ->addString($sidebar, 'sidebar')
+             ->addString($tripTych11, 'triptych-1')
+             ->addString($tripTych12, 'triptych-2')
+             ->addString($tripTych13, 'triptych-3')
+             ->addString($footerCol1, 'footer-col-1')
+             ->addString($footerCol2, 'footer-col-2')
+             ->addString($footerCol3, 'footer-col-3')
+             ->addString($footerCol4, 'footer-col-4');
  
 });
 
+
+// This route shows regions that the theme is built up by.
+// It shows a grid in the background and all region's placement
+// on the grid.
 
 $app->router->add('regions', function() use ($app) {
  
  	$app->theme->setTitle("Regioner");
+
+  // The grid background
+
  	$app->theme->addStyleSheet('css/anax-grid/grid_background.less');
 
- 	$content = "Detta är ett nytt tema som visar regioner";
-
-    //$content = $app->fileContent->get('theme.md');
-    //$content = $app->textFilter->doFilter($content, 'shortcode, markdown');
-    
-    //$byline  = $app->fileContent->get('byline.md');
-    //$byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
+  // Add the regions that will be rendered by the view
     
 	$app->views->addString('flash', 'flash')
-               ->addString('featured-1', 'featured-1')
-               ->addString('featured-2', 'featured-2')
-               ->addString('featured-3', 'featured-3')
-               ->addString('main', 'main')
-               ->addString('sidebar', 'sidebar')
-               ->addString('triptych-1', 'triptych-1')
-               ->addString('triptych-2', 'triptych-2')
-               ->addString('triptych-3', 'triptych-3')
-               ->addString('footer-col-1', 'footer-col-1')
-               ->addString('footer-col-2', 'footer-col-2')
-               ->addString('footer-col-3', 'footer-col-3')
-               ->addString('footer-col-4', 'footer-col-4');
-
-  //  $app->views->add('me/page', [
-  //      'content' => $content,
-  //  ]);
+             ->addString('featured-1', 'featured-1')
+             ->addString('featured-2', 'featured-2')
+             ->addString('featured-3', 'featured-3')
+             ->addString('main', 'main')
+             ->addString('sidebar', 'sidebar')
+             ->addString('triptych-1', 'triptych-1')
+             ->addString('triptych-2', 'triptych-2')
+             ->addString('triptych-3', 'triptych-3')
+             ->addString('footer-col-1', 'footer-col-1')
+             ->addString('footer-col-2', 'footer-col-2')
+             ->addString('footer-col-3', 'footer-col-3')
+             ->addString('footer-col-4', 'footer-col-4');
 
 });
 
+
+// This route shows typography and uses some of the available
+// regions. Content for the reoute is fetched from a html file.
 
 $app->router->add('typography', function() use ($app) {
  
@@ -141,21 +137,21 @@ $app->router->add('typography', function() use ($app) {
 
   $content = $content = $app->fileContent->get('typography.html');
 
+  // Render the content in main and sidebar
+
   $app->views->addString($content, 'main')
              ->addString($content, 'sidebar');
               
 });
 
 
+// This route gives an example of font awesome. 
+
 $app->router->add('awesome', function() use ($app) {
  
   $app->theme->setTitle("Font awesome");
-  //$app->theme->addStyleSheet('css/anax-grid/grid_background.less');
-
-  //$content = $content = $app->fileContent->get('typography.html');
-
-    //$content = $app->fileContent->get('theme.md');
-    //$content = $app->textFilter->doFilter($content, 'shortcode, markdown');
+  
+  // Content for main
     
   $content = '<h1>Test av Font Awesome</h1>
               <p>Font awesome ger stöd för att lägga in häftiga bilder på din hemsida. Det finns även stöd för rörliga, små animationer. Till exempel:</p>
@@ -165,37 +161,26 @@ $app->router->add('awesome', function() use ($app) {
               <i class="fa fa-cog fa-spin"></i>';  
 
   $content .= '<h2>Nytt i 4.2.0</h2>
-      <p>Nedan sysns några exempel på nya ikoner i awesome 4.20</p>
-      <i class="fa fa-area-chart"></i>
-      <i class="fa fa-at"></i>
-      <i class="fa fa-bell-slash"></i>
-      <i class="fa fa-bell-slash-o"></i>
-      <i class="fa fa-bicycle"></i>
-      <i class="fa fa-binoculars"></i>
-      <i class="fa fa-birthday-cake"></i>
-      <i class="fa fa-bus"></i>
-      <i class="fa fa-calculator"></i>
-      <i class="fa fa-cc"></i>
-      <i class="fa fa-cc-amex"></i>
-      <i class="fa fa-cc-discover"></i>
-      <i class="fa fa-cc-mastercard"></i>
-      <i class="fa fa-cc-paypal"></i>
-      <i class="fa fa-cc-stripe"></i>
-      <i class="fa fa-cc-visa"></i>
-      <i class="fa fa-copyright"></i> 
-      <i class="fa fa-eyedropper"></i> 
-      <i class="fa fa-futbol-o"></i>
-      <i class="fa fa-google-wallet"></i>
-      <i class="fa fa-ils"></i> 
-      <i class="fa fa-ioxhost"></i>';
-    
-    
-    
+               <p>Nedan sysns några exempel på nya ikoner i awesome 4.2.0</p>
+               <i class="fa fa-area-chart fa-2x"></i>
+               <i class="fa fa-at fa-2x"></i>
+               <i class="fa fa-bell-slash fa-2x"></i>
+               <i class="fa fa-bell-slash-o fa-2x"></i>
+               <i class="fa fa-bicycle fa-2x"></i>
+               <i class="fa fa-binoculars fa-2x"></i>
+               <i class="fa fa-birthday-cake fa-2x"></i>
+               <i class="fa fa-bus fa-2x"></i>
+               <i class="fa fa-calculator fa-2x"></i>
+               <i class="fa fa-copyright fa-2x"></i> 
+               <i class="fa fa-eyedropper fa-2x"></i> 
+               <i class="fa fa-futbol-o fa-2x"></i>
+               <i class="fa fa-ils fa-2x"></i> 
+               <i class="fa fa-ioxhost fa-2x"></i>';
 
-    //$byline  = $app->fileContent->get('byline.md');
-    //$byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
+  // Content for sidebar
+  
   $sidebar = '<h1>Exempel på bilder</h1>
-              <h2>Grundlikon</h2>
+              <h2>Grundikon</h2>
               <i class="fa fa-camera-retro"></i> fa-camera-retro
               <h2>Varierande storlek</h2>
               <i class="fa fa-camera-retro fa-lg"></i> fa-lg </br></br>
@@ -208,11 +193,6 @@ $app->router->add('awesome', function() use ($app) {
   $app->views->addString($content, 'main')
              ->addString($sidebar, 'sidebar');
               
-               
-  //  $app->views->add('me/page', [
-  //      'content' => $content,
-  //  ]);
-
 });
 
 $app->router->handle();

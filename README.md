@@ -56,12 +56,52 @@ The following external modules are included and subject to its own license.
 
 
 
+### LESS
+* Website: http://leafo.net/lessphp
+* Version: 0.4.0
+* License: MIT License 
+* Path: included in `webroot/css/anax-grid/lessphp`
+
+
+
+### Semantic.gs
+* Website: http://semantic.gs/
+* Version: 1.2, January 11, 2012
+* License: Apache License
+* Path: included in `webroot/css/anax-grid/semantic.gs`
+
+
+
+### Font Awesome
+* Website: http://fortawesome.github.io/Font-Awesome/
+* Version: 4.2.0
+* License: MIT License and SIL OFL 1.1
+* Path: included in `webroot/css/anax-grid/font-awesome-4.2.0`
+
 
 History
 -----------------------------------
 
 
 ###History for phpmvc-me
+
+
+v3.0.0 (tagged with v3.0.0)
+
+* Version containing kmom03
+* Added support for LESS PHP
+* Added support for grid-layout
+* Added support for Font Awesome
+* Added examples for grid-layout and Font Awesome
+
+
+v2.0.0 (tagged with v2.0.0)
+
+* Version containing kmom02
+* Added support for comment system
+* Comment system introduced on two pages, me and guestbook
+* Gravatar support added for comments
+
 
 v1.0.0 (tagged with v1.0.0)
 
@@ -77,9 +117,3 @@ v1.0.0 (tagged with v1.0.0)
 * Added /webroot/index.php main page controller and url dispacher 
 
 
-v2.0.0 (tagged with v2.0.0)
-
-* Version containing kmom02
-* Added support for comment system
-* Comment system introduced on two pages, me and guestbook
-* Gravatar support added for comments
